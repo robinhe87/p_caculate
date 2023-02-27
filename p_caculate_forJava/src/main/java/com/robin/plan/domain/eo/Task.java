@@ -39,9 +39,19 @@ public class Task {
     private Date targetStartDate;
 
     /**
+     * 强制开始
+     */
+    private boolean forceStart;
+
+    /**
      * 计划结束时间
      */
     private Date targetEndDate;
+
+    /**
+     * 强制结束
+     */
+    private boolean forceEnd;
 
     /**
      * 工期
