@@ -1,4 +1,4 @@
-package com.robin.plan.domain.eo;
+package com.robin.plan.domain;
 
 /**
  * @author hehongbing

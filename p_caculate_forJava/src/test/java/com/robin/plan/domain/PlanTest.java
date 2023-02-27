@@ -1,7 +1,5 @@
 package com.robin.plan.domain;
 
-import com.robin.plan.domain.eo.Plan;
-import com.robin.plan.domain.eo.Task;
 import org.junit.Test;
 
 /**

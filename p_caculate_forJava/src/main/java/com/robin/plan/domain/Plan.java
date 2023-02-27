@@ -1,4 +1,4 @@
-package com.robin.plan.domain.eo;
+package com.robin.plan.domain;
 
 import lombok.extern.slf4j.Slf4j;
 
