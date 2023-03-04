@@ -202,6 +202,7 @@ public class Plan {
                 }
             }
         }
+        // todo 增加强制约束判断
         task.setTargetStartDate(minStartDate);
         task.setTargetEndDate(maxEndDate);
     }
