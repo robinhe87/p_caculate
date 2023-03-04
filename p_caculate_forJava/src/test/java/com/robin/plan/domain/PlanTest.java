@@ -18,7 +18,7 @@ public class PlanTest {
      * 2    10  2023-04-01   null       null            wbs
      * 1-1  6   2023-04-01   1          null            task
      * 1-2  4   2023-04-01   1          1-1(1)          task
-     * 2-1  5   2023-04-01   2          1-2(0)             task
+     * 2-1  5   2023-04-01   2          1-2(0)          task
      * 2-2  5   2023-04-01   2          1-2(0),2-1(0)   task
      */
     public Plan buildPlan() {
