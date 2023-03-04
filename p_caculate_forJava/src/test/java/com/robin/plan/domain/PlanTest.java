@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author hehongbing
@@ -14,8 +15,8 @@ public class PlanTest {
 
     /**
      * code dur startDate   parentCode beforeCode       taskType
-     * 1    10   2023-04-01  null       null            wbs
-     * 2    10  2023-04-01   null       null            wbs
+     * 1        2023-04-01  null       null            wbs
+     * 2        2023-04-01   null       null            wbs
      * 1-1  6   2023-04-01   1          null            task
      * 1-2  4   2023-04-01   1          1-1(1)          task
      * 2-1  5   2023-04-01   2          1-2(0)          task
@@ -42,8 +43,17 @@ public class PlanTest {
     @Test
     public void calculate() {
         Plan plan = buildPlan();
-        plan.calculate(null);
+
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(2021, 4, 1);
+//        Date date = calendar.getTime();
+
+        Date date = null;
+
+        plan.calculate(date);
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
         for (Task task : plan.getTaskMap().values()) {
             System.out.println(task.getTaskCode() + " : " + sdf.format(task.getTargetStartDate()) + " ~ " + sdf.format(task.getTargetEndDate()));
         }

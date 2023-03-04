@@ -160,8 +160,6 @@ public class Plan {
             }
         }
 
-        // todo 判断是否有依赖死结，遗留下次处理
-
         // 进度计算出前置任务
         for (Task task : taskMap.values()) {
             doCalculate(task);
@@ -174,6 +172,7 @@ public class Plan {
 
     }
 
+    // todo 过程中判断是否有循环依赖，如果有则报错
     private void doCalculate(Task task) {
         if (CollUtil.isEmpty(task.getBefores())) {
             return;
