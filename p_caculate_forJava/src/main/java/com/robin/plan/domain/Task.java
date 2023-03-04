@@ -2,6 +2,7 @@ package com.robin.plan.domain;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +15,9 @@ import java.util.List;
 public class Task {
 
     /**
-     * 任务ID(唯一)
+     * 任务编号(唯一)
      */
-    private String taskId;
+    private String taskCode;
 
     /**
      * 任务名称
@@ -29,9 +30,9 @@ public class Task {
     private String taskType;
 
     /**
-     * 上级任务ID
+     * 上级任务编号
      */
-    private String parentTaskId;
+    private String parentCode;
 
     /**
      * 计划开始时间
@@ -58,20 +59,27 @@ public class Task {
      */
     private Integer duration;
 
+    public Task(String taskCode, String taskName, String parentCode, Date targetStartDate, Integer duration) {
+        this.taskCode = taskCode;
+        this.taskName = taskName;
+        this.parentCode = parentCode;
+        this.targetStartDate = targetStartDate;
+        this.duration = duration;
+    }
+
     /**
      * 子节点
      */
-    private List<Task> children;
+    private List<Task> children = new ArrayList<Task>();
 
     /**
      * 前置节点
      */
-    private List<TaskRefrence> befores;
+    private List<TaskRefrence> befores = new ArrayList<TaskRefrence>();
 
     /**
      * 后置节点
      */
-    private List<TaskRefrence> afters;
-
+    private List<TaskRefrence> afters = new ArrayList<TaskRefrence>();
 
 }
